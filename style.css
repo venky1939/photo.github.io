@@ -1,0 +1,13 @@
+.viewHeight {
+    height: 90vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .viewHeight {
+        height: 40vh;
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
