@@ -6,7 +6,68 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script>
+      function checkRegistration()
+      {
+          var name1 = document.forms["registration"]["Firstname"];
+          var name2 = document.forms["registration"]["Lastname"];
+          var email = document.forms["registration"]["Email"];
+          var password = document.forms["registration"]["Password"];
+          var address = document.forms["registration"]["Address"];
+          var city = document.forms["registration"]["City"];
+          
+          if (name1.value=="")
+              {
+                  window.alert("Please enter your Firstname");
+                  name1.focus();
+                  return false;
+              }
+              if (name2.value=="")
+              {
+                  window.alert("Please enter your Lastname");
+                  name1.focus();
+                  return false;
+              }
+              if (email.value=="")
+                  {
+                      window.alert("Please enter your email id");
+                      email.focus();
+                      return false;
+                  }
+              if (email.value.indexOf("@", 0)<0)
+                  {
+                      window.alert("Please enter a valid email");
+                      email.focus();
+                      return false;
+                  }
+              if (email.value.indexOf(".", 0)<0)
+                  {
+                      window.alert("Please enter a valid email");
+                      email.focus();
+                      return false;
+                  }
+                  if (password.value=="")
+                  {
+                      window.alert("Please enter your password");
+                      password.focus();
+                      return false;
+                  }
+                  if (address.value=="")
+                  {
+                      window.alert("Please enter your address");
+                      address.focus();
+                      return false;
+                  }
+                  if (city.value=="")
+                  {
+                      window.alert("Please enter your city");
+                      city.focus();
+                      return false;
+                  }
+              
+            return true;
+            }      
+</script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -84,8 +145,7 @@
     </div>
     <div class="jumbotron">
         <h1 class="display-4">Hello Photographer</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
+         <hr class="my-4"> 
         <p>Whether you’re a budding photographer or just fancy seeing the sights and getting some top-notch snaps along the way, these fun and informative experiences are for you. Grab your camera and head out around some of Britain’s best landscapes, urban
             or other, and learn some tips and tricks to upgrade your photography skills, one photo at a time. From London’s Square Mile to the wild of safari, whatever you choose, you’re sure to come away with some frame-worthy photos and techniques to
             last a lifetime.Photography is the art of capturing light with a camera, usually via a digital sensor or film, to create an image. With the right camera equipment, you can even photograph wavelengths of light invisible to the human eye, including
@@ -129,6 +189,41 @@
         </div>
     </div><br>
     <br>
+
+    
+     <div class="jumbotron">
+      <h3 class="display-6">The factors that can influence your photography</h3>
+      <hr class="my-6">
+      <p>As a photographer, there is no limit to your education and the quality of your picture is only
+        restricted by the effort you put in. The more distance you’re willing to cover in terms of effort, 
+        the better results you’ll see. Simply attaching watermarks to your photos does not make you a good 
+        photographer and neither does buying an expensive camera for that matter.
+        If you want to improve your photography skills and are looking for ways to increase your know-how 
+        on taking really great photos then you should consider the following deciding factors which can mean 
+        the difference between eye-catching photos or dull and forgettable ones:</p>
+      <b>1. Information: </b>As a photographer, you need to know exactly what kind of equipment you are using. You should also know what kind of lens is suitable at what stage of the process, and what the complete specifications and capabilities of your camera are.
+      <br><b>2. Distance from object</b>
+      The distance present between you and the object you are capturing is of the essence. The distance governs how you want take photos and how you should use your camera.
+      <br><b>3. Lighting</b>
+      Shooting and capturing pictures in sunlight is comparatively easier compared to taking photos at night.
+      <br><b>4. Angle</b>
+      A professional photographer has the ability to take a good shot even using a a poor or mediocre camera than an amateur photographer taking photos with Canon’s latest contraption. This largely owes to the positioning and angle of the picture.
+    </div>
+
+    <center>
+      <div class="btn-group btn-group-justified col-md-6">
+                  <a href="https://photographylife.com/photo-spots" class="btn btn-primary">Photospots</a>
+                  <a href="https://photographylife.com/lenses" class="btn btn-primary">Lenses</a>
+                  <a href="https://photographylife.com/shop" class="btn btn-primary">Shop</a>
+                </div>
+  </center>
+  <br>
+  <br>
+
+
+
+
+
     <center>
         <h1>A great picture is all about perspective</h1>
     </center>
@@ -157,37 +252,39 @@
     
     </center><br>
     <br>
+    
+       
     <center>
-        <h1>SIGNUP HERE </h1>
+      <h1 style="font-size: 30px; color: black;">Sign up here for updates from us.</h1>
     </center>
-    <form>
+    <form name="registration" onsubmit="return checkRegistration()">
         <div class="form-row" id="register">
             <div class="form-group col-md-6">
                 <label for="inputFirstname4">Firstname</label>
-                <input type="name" class="form-control" id="inputEmail4" placeholder="Enter your firstname">
+                <input type="name" class="form-control" id="inputEmail4" name="Firstname" placeholder="Enter your firstname">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputLastname4">Lastname</label>
-                <input type="name" class="form-control" id="inputEmail4" placeholder="Enter your lastname">
+                <input type="name" class="form-control" id="inputEmail4" name="Lastname" placeholder="Enter your lastname">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <input type="email" class="form-control" id="inputEmail4" name="Email" placeholder="Email">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                <input type="password" class="form-control" id="inputPassword4" name="Password" placeholder="Password">
             </div>
         </div>
         <div class="form-group">
             <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <input type="text" class="form-control" id="inputAddress" name="Address" placeholder="1234 Main St">
         </div>
         
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
+                <input type="text" class="form-control" name="city" id="inputCity">
             </div><br>
             <div class="form-group col-md-6">
                 <label for="inputState">State</label>
@@ -211,29 +308,8 @@
     <br>
     <br><br>
 
-    <center>
-        <div class="btn-group btn-group-justified col-md-6">
-                    <a href="https://photographylife.com/photo-spots" class="btn btn-primary">Photospots</a>
-                    <a href="https://photographylife.com/lenses" class="btn btn-primary">Lenses</a>
-                    <a href="https://photographylife.com/shop" class="btn btn-primary">Shop</a>
-                  </div>
-    </center>
-    <br>
-    <br>
-<!--     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="http://www.naturephotographysimplified.com/wp-content/uploads/2019/06/How-to-get-sharp-images-Birds-in-flight-Bharatpur-Bird-Sanctuary-bird-Photography-by-Prathap-DK-bronze-winged-jacana-Greater-Spotted-Eagle-750x500.jpg" class="d-block w-100"
-                    alt="...">
-            </div>
-
-
-        </div> 
-    </div>-->
-
     
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -387,17 +463,17 @@
   <div class="container"></div>
         <hr>
             <div class="text-center center-block">
-                <p class="txt-railway">Snap world.com -</p>
+                <p class="txt-railway">Snap World.com -</p>
                 
                     <a href="https://www.facebook.com/venkatesh.vkh.9"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                    <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                    <a href="https://twitter.com/venky1939"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
                     <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
                     <a href="mailto:venkateshgandla.35@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
     </div>
         <hr>
     </div>
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://venky1939.github.io/project/"> Snap world.com</a>
+        <a href="https://venky1939.github.io/project/"> Snap World.com</a>
       </div>
 </body>
 
